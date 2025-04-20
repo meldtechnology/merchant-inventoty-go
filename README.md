@@ -1,1 +1,0 @@
-# merchant-inventoty-go
