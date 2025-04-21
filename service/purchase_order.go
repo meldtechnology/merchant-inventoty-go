@@ -16,7 +16,11 @@ func AddPurchase(newPurchaseOrder model.PurchaseOrder) (*model.PurchaseOrder, er
 	log.Println("Adding new Purchase Order...")
 
 	//Get Supplier
-	supplier, _ := supplierRepository.FindByUuid(newPurchaseOrder.SupplierUuid)
+	supplier, err := supplierRepository.FindByUuid(newPurchaseOrder.SupplierUuid)
+	if err != nil {
+		return nil, err
+	}
+
 	savedPurchaseOrder, err := purchaseOrderRepository.Save(purchaseOrderConverter.ToEntity(newPurchaseOrder, *supplier))
 	if err != nil {
 		return nil, err
@@ -40,7 +44,7 @@ func UpdatePurchase(uuid string, status string) (*model.PurchaseOrder, error) {
 	purchaseOrder := updatePurchaseOrderWithStatus(purchaseOrderAndItems.PurchaseOrder, status)
 
 	_, err = purchaseOrderRepository.UpdatePurchaseOrder(purchaseOrder)
-	// TODO: Implement async call here to update the product quantity in stock using goroutine
+	// TODO: Implement async call here to update the product quantity in stock using goroutine when status is FULFILLED
 	purchaseOrderAndItems.PurchaseOrder.PurchaseOrder = purchaseOrder
 	savedPurchaseOrder := constructItem(*purchaseOrderAndItems)
 	return &savedPurchaseOrder, nil

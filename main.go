@@ -20,7 +20,7 @@ func setupConfig(app *fiber.App) {
 
 func main() {
 	// Run the configuration
-	log.Println("Running the configurations...")
+	log.Println("Loading the configurations...")
 	app := config.CreatAppServer()
 	setupConfig(app)
 	config.StartServer(app, 4400)

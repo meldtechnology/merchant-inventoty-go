@@ -15,8 +15,9 @@ type PostgresDatabase struct {
 var Database PostgresDatabase
 
 func buildConnectionString() string {
+	DatabaseEnv()
 	return fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%d sslmode=disable",
-		Host, User, Password, DatabaseName, Port)
+		HOST, USER, PASSWORD, DATABASE_NAME, PORT)
 }
 
 func Connect() {
