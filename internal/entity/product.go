@@ -1,4 +1,4 @@
-package adding
+package entity
 
 type Product struct {
 	Id              int     `json:"id"`
@@ -7,6 +7,6 @@ type Product struct {
 	Description     string  `json:"description"`
 	Sku             string  `json:"sku"`
 	Price           float64 `json:"price"`
-	QuantityInStock int     `json:"quantityInStock"`
-	ReorderLevel    int     `json:"reorderLevel"`
+	QuantityInStock int     `json:"quantity_in_stock"`
+	ReorderLevel    int     `json:"reorder_level"`
 }
