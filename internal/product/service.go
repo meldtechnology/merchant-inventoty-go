@@ -4,8 +4,8 @@ import (
 	"context"
 	"errors"
 	validation "github.com/go-ozzo/ozzo-validation/v4"
-	"github.com/mrchantinevntory/internal/entity"
-	"github.com/mrchantinevntory/pkg/log"
+	"github.com/meldtechnology/merchant-inventory-go/internal/entity"
+	"github.com/meldtechnology/merchant-inventory-go/pkg/log"
 )
 
 // Service encapsulates use-cases logic for products.

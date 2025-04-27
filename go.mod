@@ -1,4 +1,4 @@
-module github.com/mrchantinevntory
+module github.com/meldtechnology/merchant-inventory-go
 
 go 1.24.2
 

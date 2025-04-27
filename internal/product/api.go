@@ -2,9 +2,9 @@ package product
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/mrchantinevntory/internal/errors"
-	"github.com/mrchantinevntory/pkg/log"
-	"github.com/mrchantinevntory/pkg/pagination"
+	"github.com/meldtechnology/merchant-inventory-go/internal/errors"
+	"github.com/meldtechnology/merchant-inventory-go/pkg/log"
+	"github.com/meldtechnology/merchant-inventory-go/pkg/pagination"
 )
 
 // RegisterHandlers sets up the routing of the HTTP handlers.

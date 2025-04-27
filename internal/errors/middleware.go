@@ -6,7 +6,7 @@ import (
 	"fmt"
 	validation "github.com/go-ozzo/ozzo-validation/v4"
 	"github.com/gofiber/fiber/v2"
-	"github.com/mrchantinevntory/pkg/log"
+	"github.com/meldtechnology/merchant-inventory-go/pkg/log"
 	"runtime/debug"
 	"strconv"
 )

@@ -2,7 +2,7 @@ package accesslog
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/mrchantinevntory/pkg/log"
+	"github.com/meldtechnology/merchant-inventory-go/pkg/log"
 	"time"
 )
 

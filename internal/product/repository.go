@@ -2,9 +2,9 @@ package product
 
 import (
 	"context"
-	"github.com/mrchantinevntory/internal/entity"
-	"github.com/mrchantinevntory/pkg/dbcontext/progress"
-	"github.com/mrchantinevntory/pkg/log"
+	"github.com/meldtechnology/merchant-inventory-go/internal/entity"
+	"github.com/meldtechnology/merchant-inventory-go/pkg/dbcontext/progress"
+	"github.com/meldtechnology/merchant-inventory-go/pkg/log"
 )
 
 // Repository encapsulates the logic to access products from the data source.

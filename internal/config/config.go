@@ -1,9 +1,9 @@
-package app_config
+package config
 
 import (
 	"github.com/go-ozzo/ozzo-validation/v4"
 	env "github.com/lpernett/godotenv"
-	"github.com/mrchantinevntory/pkg/log"
+	"github.com/meldtechnology/merchant-inventory-go/pkg/log"
 	"gopkg.in/yaml.v3"
 	"io/ioutil"
 	"strconv"
