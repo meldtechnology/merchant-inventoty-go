@@ -56,16 +56,6 @@ func (db *PgDb) Transactional(ctx context.Context, f func(ctx context.Context) e
 
 // TransactionHandler returns a middleware that starts a transaction.
 // The transaction started is kept in the context and can be accessed via With().
-//func (db *PgDb) TransactionHandler() routing.Handler {
-//	return func(c *routing.Context) error {
-//		return db.db.TransactionalContext(c.Request.Context(), nil, func(tx *dbx.Tx) error {
-//			ctx := context.WithValue(c.Request.Context(), txKey, tx)
-//			c.Request = c.Request.WithContext(ctx)
-//			return c.Next()
-//		})
-//	}
-//}
-
 func (db *PgDb) ChiTransactionHandler(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		timeoutContext, _ := context.WithTimeout(context.Background(), time.Second)
