@@ -11,12 +11,6 @@ func Handler(logger log.Logger) fiber.Handler {
 	return func(c *fiber.Ctx) error {
 		start := time.Now()
 
-		//rw := &access.LogResponseWriter{ResponseWriter: c.Response, Status: http.StatusOK}
-		//c.Response = rw
-
-		// associate request ID and session ID with the request context
-		// so that they can be added to the log messages
-		//ctx := c.Request().Context()
 		ctx := log.WithRequest(c.Context(), c)
 
 		err := c.Next()
