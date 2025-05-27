@@ -1,0 +1,4 @@
+dsn: "postgres://localhost/merchant_inventory_demo?sslmode=disable&user=dev&password=test@4$"
+jwt_signing_key: "LxsKJywDL5O5PvgODZhBH12KE6k2yL8E"
+server_port: 4400
+mode: development
