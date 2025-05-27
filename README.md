@@ -33,7 +33,7 @@ This is a basic typical Order Inventory application demo (like what you'd use fo
 ### Description: This is a RESTFul API service
 
 #### Core Language is `Go 1.24.2`
-#### Web Framework is `fiber v2.52.6`
+#### Web Framework is `fiber v2.52.7`
 #### Database Used is `Postgres`
 #### Database Driver Used is `Postgres v1.5.11 `
 #### Go Database ORM is `Gorm v1.25.12`
@@ -41,6 +41,21 @@ This is a basic typical Order Inventory application demo (like what you'd use fo
 #### Environment Variable used is `dotenv`
 
 =================================================================
+## Project Structure Overview
+
+* `cmd/` - This has the application entry binary or executable. The `main.go` inside the server directory.
+* `config/` - contains config files for different environments (`local`, `development`, `staging`, `production`, etc)
+* `internal/` - This contains domain and middleware logic (product, customer, order, handlers, etc.)
+* `internal/config/` - centralizes config loading
+* `internal/errors/` - contains the central endpoint response amd the middleware routing
+* `internal/entity/` - This contains domain models like product, customer, order, id, etc.)
+* `migrations/` - This contains the migration scripts
+* `pkg/log` - This handles application level logs
+* `pkg/dbcontext/` - handles DB connection
+* `pkg/accesslog/` - This handles the middleware activity logging
+* `pkg/pagination/` - handles the data pagination
+
+============================================================================
 ## Setup
 
 ### 1.   Add `Fiber` Library
@@ -61,31 +76,3 @@ The Postgres used actually runs in a docker. The port 4400 was used for the go a
 
 ## Stop the application
 `<contro>+c`
-
-## Endpoints Available
-
-### Products
-* Get All Products Paginated - `http://localhost:4400/api/v1/products?page=1&size=10`
-* Get Product By UUID - `http://localhost:4400/api/v1/products/38c6260f-4771-4911-a1aa-d2441e253e17`
-* Add new Product - `http://localhost:4400/api/v1/products`
-* Update Product Details By Product UUID - `http://localhost:4400/api/v1/products/uuid`
-
-### Customers
-* Get All Customers Paginated - `http://localhost:4400/api/v1/customers?page=1&size=10`
-* Get Customer By UUID - `http://localhost:4400/api/v1/customers/ccecb1f8-7299-4ab3-8e2e-05c2ab2f7cb0`
-* Get Customer By Phone - `http://localhost:4400/api/v1/customers/phone/08097656543`
-* Add new Customer - `http://localhost:4400/api/v1/customers`
-* Update Customer Details By Customer UUID - `http://localhost:4400/api/v1/customers/uuid`
-
-### Suppliers
-* Get All Suppliers Paginated - `http://localhost:4400/api/v1/suppliers?page=1&size=10`
-* Get Supplier By UUID - `http://localhost:4400/api/v1/suppliers/dad16b11-5524-463c-af27-ded6c6d690f1`
-* Add new Supplier - `http://localhost:4400/api/v1/suppliers`
-* Update Supplier Details By Supplier UUID - `http://localhost:4400/api/v1/suppliers/uuid`
-
-### Purchase Orders and Purchase Order Items
-* Get All Purchase Orders Paginated - `http://localhost:4400/api/v1/purchase-orders?page=1&size=3`
-* Get Purchase Order By UUID - `http://localhost:4400/api/v1/purchase-orders/13240642-9bad-4b67-a21e-2192538e94dd`
-* Get Purchase Order Statuses - `http://localhost:4400/api/v1/purchase-orders/status/public`
-* Add new Purchase Order - `http://localhost:4400/api/v1/purchase-orders`
-* Update Purchase Order Status - `http://localhost:4400/api/v1/purchase-orders/13240642-9bad-4b67-a21e-2192538e94dd/status/APPROVED`
